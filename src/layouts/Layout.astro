@@ -2,9 +2,9 @@
 interface Props {
 	title: string;
 }
-import { FaLinkedin } from 'react-icons/fa'; 
-import { FaEnvelope } from 'react-icons/fa'; 
-import { FaDownload } from 'react-icons/fa'; 
+import { FaLinkedin } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
+import { FaBriefcase } from "react-icons/fa";
 import { Image } from "astro:assets";
 import me from "../assets/fox.png";
 const { title } = Astro.props;
@@ -40,13 +40,13 @@ const { title } = Astro.props;
 				class="button-links"
 				style="display: flex; flex-wrap: wrap; justify-content: center;"
 			>
-			
-			<li style="margin: 5px;">
+				<li style="margin: 5px;">
 					<a
 						href="https://www.linkedin.com/in/benjaminali/"
 						class="btn btn-primary"
 					>
-					<FaLinkedin />Connect</a>
+						<FaLinkedin />Connect</a
+					>
 				</li>
 				<li style="margin: 5px;">
 					<a href="mailto:me@benjaminali.com" class="btn btn-primary">
@@ -54,9 +54,9 @@ const { title } = Astro.props;
 					</a>
 				</li>
 				<li style="margin: 5px;">
-					<a href="https://your-cv-link.com" class="btn btn-primary">
-						<FaDownload />Download CV
-					</a>
+					<a href="/cv" class="btn btn-primary">
+						<FaBriefcase />My CV</a
+					>
 				</li>
 			</footer>
 		</main>
@@ -137,6 +137,13 @@ const { title } = Astro.props;
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
+		background-image: linear-gradient(
+			to right,
+			#ff9900,
+			#ffcc00 50%,
+			#ffff00 100%
+		);
+		background-size: 500%; /* Adjust based on the number of colors */
 	}
 	.instructions-container {
 		max-width: 800px; /* Adjust as needed */
@@ -190,19 +197,19 @@ const { title } = Astro.props;
 		font-weight: bold; /* Make the title bold */
 		color: white; /* Or any color that contrasts with your background */
 	}
-	.button-links { 
-     display: flex;
-     align-items: center; /* Vertically center icons and text */
-   }
-   .button-links li {
-	list-style: none;
-     margin: 5px; /* Adjust spacing between list items */
-   }
-   .button-links a {
-     display: flex;
-     align-items: center; /* Vertically center within each button */
-     gap: 5px; /* Adjust spacing between icon and text */
-   }
+	.button-links {
+		display: flex;
+		align-items: center; /* Vertically center icons and text */
+	}
+	.button-links li {
+		list-style: none;
+		margin: 5px; /* Adjust spacing between list items */
+	}
+	.button-links a {
+		display: flex;
+		align-items: center; /* Vertically center within each button */
+		gap: 5px; /* Adjust spacing between icon and text */
+	}
 	.btn {
 		/* Style your buttons as needed */
 		display: inline-block;
@@ -255,6 +262,11 @@ const { title } = Astro.props;
 			rgba(var(--accent-dark), 33%)
 		);
 		border-radius: 8px;
+		transition: transform 0.2s ease;
+	}
+
+	.link-card:hover {
+		transform: scale(1.05); /* Scale up the card on hover */
 	}
 
 	.date {
