@@ -1,4 +1,4 @@
-# Welcome to [Your Name]'s Blog! 👋
+# Welcome to Benjamin Ali's Blog! 👋
 This is my personal corner of the internet - a place where I share my thoughts, experiences, and learnings about web development, tech, life.
 
 ## ✨ Features
